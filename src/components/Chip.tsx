@@ -1,0 +1,12 @@
+const Chip = ({ children, ...props }: React.HTMLProps<HTMLDivElement>) => {
+  return (
+    <div
+      className="w-fit h-fit px-3 py-1 rounded-full bg-gray-200 text-sm font-medium text-gray-700 select-none border border-neutral-300"
+      {...props}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default Chip;
