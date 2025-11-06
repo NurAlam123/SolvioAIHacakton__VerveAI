@@ -24,22 +24,24 @@ const JobPostCard = ({
             alt="company logo"
             width={24}
             height={24}
-            className="object-cover"
+            className="object-cover size-4 md:size-6"
           />
-          <p className="text-base font-medium">{company?.name}</p>
+          <p className="text-sm md:text-base font-medium">{company?.name}</p>
         </div>
 
-        <p className="text-sm text-gray-700 min-w-fit mt-1.5 select-none">
+        <p className="text-xs md:text-sm text-gray-700 min-w-fit md:mt-1.5 select-none">
           <Time time={createdAt} />
         </p>
       </div>
 
-      <div className="mb-3">
-        <p className="text-xl font-bold text-gray-800">{title}</p>
-        <p className="text-sm/5 text-gray-700 mt-1">{description}</p>
+      <div className="mb-2 md:mb-3">
+        <p className="text-lg/5 md:text-xl font-bold text-gray-800">{title}</p>
+        <p className="text-xs/3.75 md:text-sm/5 text-gray-700 mt-2 md:mt-1">
+          {description}
+        </p>
       </div>
 
-      <div className="flex gap-1 mb-4 flex-wrap">
+      <div className="flex gap-0.5 md:gap-1 mb-4 flex-wrap">
         <Chip>{location}</Chip>
         <Chip>{type}</Chip>
         <Chip>{experience}</Chip>
