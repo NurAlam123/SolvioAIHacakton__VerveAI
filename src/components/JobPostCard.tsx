@@ -1,6 +1,8 @@
 import type { JobPosts } from "@/constant/posts";
 
 import Chip from "./Chip";
+import Time from "./Time";
+
 import Button from "./ui/Button";
 import Image from "./ui/Image";
 
@@ -30,7 +32,7 @@ const JobPostCard = ({
         </div>
 
         <p className="text-sm text-gray-700 min-w-fit mt-1.5 select-none">
-          {createdAt}
+          <Time time={createdAt} />
         </p>
       </div>
 

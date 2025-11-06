@@ -2,7 +2,7 @@ import { CircleUserRoundIcon, CogIcon, UploadIcon } from "lucide-react";
 
 const NavigationCard = () => {
   return (
-    <div className="w-full border border-gray-200 rounded-2xl overflow-hidden p-2 flex flex-col">
+    <div className="w-full border border-gray-200 rounded-2xl overflow-hidden p-2 flex flex-col bg-white">
       <button
         type="button"
         className="flex items-center justify-start gap-2 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"

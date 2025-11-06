@@ -2,7 +2,7 @@ import Image from "./ui/Image";
 
 const ProfileCard = () => {
   return (
-    <div className="w-full border border-gray-200 rounded-2xl overflow-hidden">
+    <div className="bg-white w-full border border-gray-200 rounded-2xl overflow-hidden">
       <div className="relative">
         <div className="aspect-[2.7/1] w-full h-24 overflow-hidden">
           <Image
@@ -27,7 +27,7 @@ const ProfileCard = () => {
 
           <div className="-mt-8 px-2 pb-4">
             <p className="font-medium">Kodom Ali</p>
-            <p className="text-sm">21 {"//"} SWE @BaperHotel</p>
+            <p className="text-sm">20 {"//"} SWE @BaperHotel</p>
           </div>
         </div>
       </div>

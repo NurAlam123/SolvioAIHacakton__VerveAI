@@ -11,7 +11,7 @@ export default function Home() {
           {"VERVE AI".split("").map((c, i) => (
             <span
               key={`char-${c}-${i + 1}`}
-              className=" text-gray-300/40 hover:text-gray-300 inline-block transition-colors ease-in-out"
+              className=" text-gray-300/40 hover:text-gray-300 inline-block transition-all ease-in-out hover:rotate-6 hover:scale-95"
             >
               {c}
             </span>
