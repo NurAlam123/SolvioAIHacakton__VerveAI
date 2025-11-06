@@ -1,8 +1,9 @@
+import UserJobApplications from "@/components/UserJobApplications";
 import Image from "@/components/ui/Image";
 
 const ProfilePage = () => {
   return (
-    <div className="relative">
+    <div className="h-full overflow-y-auto space-y-2 no-scrollbar pb-24 md:pb-16 relative">
       <div>
         <div className="aspect-[2.7/1] w-full h-48 overflow-hidden rounded-[48px] [corner-shape:squircle]">
           <Image
@@ -33,12 +34,12 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      <div className="mt-8">
+      <div className="mt-8 space-y-2">
         <p className="uppercase text-sm font-semibold text-gray-500 select-none">
           APPLICATIONS
         </p>
 
-        {/* <UserJobApplications /> */}
+        <UserJobApplications />
       </div>
     </div>
   );
