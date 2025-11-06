@@ -48,7 +48,7 @@ const UserJobApplications = () => {
         <div key={id} className="space-y-1 bg-gray-50 p-4 rounded-2xl relative">
           <div className="flex gap-1">
             <Image
-              src="/file.svg"
+              src="/replit.svg"
               alt="company"
               width={64}
               height={64}

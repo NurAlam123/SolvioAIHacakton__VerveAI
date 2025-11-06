@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rubik.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <main className="max-w-4xl mx-auto h-svh md:h-screen md:grid md:grid-cols-[1fr_30%] md:gap-2 pt-6 md:py-6 px-2 relative">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   CircleUserRoundIcon,
   CogIcon,
@@ -7,7 +5,6 @@ import {
   UploadIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import Image from "@/components/ui/Image";
 
@@ -68,9 +65,7 @@ const HomeButton = () => {
   );
 };
 
-export const NavigationCard = () => {
-  const pathname = usePathname();
-
+export const NavigationCard = ({ pathname }: { pathname: string }) => {
   return (
     <div className="flex max-md:gap-2 max-md:items-center md:w-full md:border md:border-gray-200 md:rounded-2xl md:overflow-hidden md:p-2 md:flex-col bg-white">
       {pathname !== "/" && <HomeButton />}
