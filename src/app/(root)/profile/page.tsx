@@ -5,13 +5,14 @@ const ProfilePage = () => {
   return (
     <div className="h-full overflow-y-auto space-y-2 no-scrollbar pb-24 md:pb-16 relative">
       <div>
-        <div className="aspect-[2.7/1] w-full h-48 overflow-hidden rounded-[48px] [corner-shape:squircle]">
+        <div className="aspect-[2.7/1] w-full h-32 sm:h-48 overflow-hidden rounded-[48px] [corner-shape:squircle]">
           <Image
             src={"/images/cover.gif"}
             alt="cover"
             width={1080}
             height={400}
             className="object-center"
+            loading="eager"
           />
         </div>
         <div>
@@ -19,9 +20,10 @@ const ProfilePage = () => {
             <Image
               src={"/images/pfp.jpg"}
               alt="profile picture"
-              width={1024}
-              height={1024}
+              width={420}
+              height={420}
               className="object-center"
+              loading="lazy"
             />
           </div>
 

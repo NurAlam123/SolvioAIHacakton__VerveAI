@@ -1,5 +1,14 @@
-import { CircleUserRoundIcon, CogIcon, UploadIcon } from "lucide-react";
+"use client";
+
+import {
+  CircleUserRoundIcon,
+  CogIcon,
+  HomeIcon,
+  UploadIcon,
+} from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import Image from "@/components/ui/Image";
 
 const UploadButton = () => {
@@ -39,7 +48,7 @@ const SettingsButton = () => {
   return (
     <Link
       href="/settings"
-      className="flex items-center justify-start gap-2 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"
+      className="flex items-center justify-start gap-2 max-md:bg-gray-50 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"
     >
       <CogIcon className="size-5 md:size-4 max-md:mb-0.5" />
       <span className="max-md:hidden select-none">Settings</span>
@@ -47,12 +56,27 @@ const SettingsButton = () => {
   );
 };
 
+const HomeButton = () => {
+  return (
+    <Link
+      href={"/"}
+      className="flex items-center justify-start gap-2 max-md:bg-gray-50 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"
+    >
+      <HomeIcon className="size-5 md:size-4 max-md:mb-0.5" />
+      <span className="max-md:hidden select-none">Home</span>
+    </Link>
+  );
+};
+
 export const NavigationCard = () => {
+  const pathname = usePathname();
+
   return (
     <div className="flex max-md:gap-2 max-md:items-center md:w-full md:border md:border-gray-200 md:rounded-2xl md:overflow-hidden md:p-2 md:flex-col bg-white">
-      <UploadButton />
-      <ProfileButton />
-      <SettingsButton />
+      {pathname !== "/" && <HomeButton />}
+      {pathname !== "/upload" && <UploadButton />}
+      {pathname !== "/profile" && <ProfileButton />}
+      {pathname !== "/settings" && <SettingsButton />}
     </div>
   );
 };
