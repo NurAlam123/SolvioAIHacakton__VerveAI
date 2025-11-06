@@ -1,9 +1,7 @@
 import type { JobPosts } from "@/constant/posts";
-
-import Chip from "./Chip";
 import Time from "./Time";
-
 import Button from "./ui/Button";
+import Chip from "./ui/Chip";
 import Image from "./ui/Image";
 
 const JobPostCard = ({

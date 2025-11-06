@@ -1,6 +1,7 @@
 import JobPostCard from "@/components/JobPostCard";
-import NavigationCard from "@/components/NavigationCard";
-import ProfileCard from "@/components/ProfileCard";
+import NavigationCard from "@/components/shared/NavigationCard";
+import ProfileCard from "@/components/shared/ProfileCard";
+
 import { jobPosts } from "@/constant/posts";
 
 export default function Home() {
