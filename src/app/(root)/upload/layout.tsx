@@ -1,8 +1,5 @@
 import Footer from "@/components/shared/Footer";
-import {
-  NavigationCard,
-  NavigationCardMobile,
-} from "@/components/shared/NavigationCard";
+import { NavigationCard } from "@/components/shared/NavigationCard";
 import ProfileCard from "@/components/shared/ProfileCard";
 
 const Right = () => {
@@ -42,7 +39,9 @@ const Middle = ({
         </p>
 
         {/* Navigation for small screens */}
-        <NavigationCardMobile />
+        <div className="md:hidden">
+          <NavigationCard />
+        </div>
       </div>
 
       {children}
