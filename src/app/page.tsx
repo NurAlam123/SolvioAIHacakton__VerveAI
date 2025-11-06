@@ -1,12 +1,22 @@
 import JobPostCard from "@/components/JobPostCard";
 import NavigationCard from "@/components/NavigationCard";
 import ProfileCard from "@/components/ProfileCard";
+import { jobPosts } from "@/constant/posts";
 
 export default function Home() {
   return (
     <main className="max-w-4xl mx-auto h-screen grid grid-cols-[1fr_30%] gap-2 py-6 px-2 relative">
-      <div className="text-5xl absolute top-1/2 -translate-y-1/2 left-0 -translate-x-[calc(50%+8px)] -rotate-90 -z-10">
-        <p className="font-bold text-gray-200/70 tracking-widest">VERVE AI</p>
+      <div className="text-5xl absolute top-1/2 -translate-y-1/2 left-0 -translate-x-[calc(50%+8px)] -rotate-90 select-none">
+        <p className="font-bold tracking-widest">
+          {"VERVE AI".split("").map((c, i) => (
+            <span
+              key={`char-${c}-${i + 1}`}
+              className=" text-gray-300/40 hover:text-gray-300 inline-block transition-colors ease-in-out"
+            >
+              {c}
+            </span>
+          ))}
+        </p>
       </div>
 
       {/* Job board */}
@@ -15,8 +25,8 @@ export default function Home() {
           JOB BOARD
         </p>
         <div className="h-full overflow-y-auto space-y-2 no-scrollbar pb-16">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-            <JobPostCard key={i} />
+          {jobPosts.map((data) => (
+            <JobPostCard key={data.id} {...data} />
           ))}
         </div>
       </div>
