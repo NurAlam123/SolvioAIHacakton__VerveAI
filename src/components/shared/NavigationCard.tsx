@@ -9,7 +9,7 @@ const UploadButton = () => {
       className="flex items-center justify-start gap-2 max-md:bg-gray-50 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"
     >
       <UploadIcon className="size-5 md:size-4" />
-      <span className="max-md:hidden">Upload</span>
+      <span className="max-md:hidden select-none">Upload</span>
     </Link>
   );
 };
@@ -19,7 +19,7 @@ const ProfileButton = () => {
     <Link href="/profile" className="max-md:order-1">
       <div className="hidden md:flex items-center justify-start gap-2 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform">
         <CircleUserRoundIcon className="size-4 mb-0.5" />
-        <span>Profile</span>
+        <span className="select-none">Profile</span>
       </div>
 
       <div className="md:hidden w-8 h-8 overflow-hidden rounded-full border border-gray-300">
@@ -42,7 +42,7 @@ const SettingsButton = () => {
       className="flex items-center justify-start gap-2 hover:bg-gray-50 px-2 py-2 rounded-xl active:scale-[0.98] transition-transform will-change-transform"
     >
       <CogIcon className="size-5 md:size-4 max-md:mb-0.5" />
-      <span className="max-md:hidden">Settings</span>
+      <span className="max-md:hidden select-none">Settings</span>
     </Link>
   );
 };

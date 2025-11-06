@@ -1,17 +1,9 @@
 import Footer from "@/components/shared/Footer";
 import { NavigationCard } from "@/components/shared/NavigationCard";
-import ProfileCard from "@/components/shared/ProfileCard";
 
 const Right = () => {
   return (
     <div className="h-full rounded-2xl max-md:hidden">
-      <div>
-        <p className="uppercase text-sm font-semibold text-gray-500 mb-4 select-none">
-          PROFILE
-        </p>
-        <ProfileCard />
-      </div>
-
       <div className="mt-8">
         <p className="uppercase text-sm font-semibold text-gray-500 mb-4 select-none">
           NAVIGATION
@@ -49,18 +41,18 @@ const Middle = ({
   );
 };
 
-const UploadLayout = ({
+const ProfileLayout = ({
   children,
 }: Readonly<{ children: React.ReactNode }>) => {
   return (
     <>
-      {/* Uplaod */}
-      <Middle title="UPLOAD">{children}</Middle>
+      {/* Profile */}
+      <Middle title="PROFILE">{children}</Middle>
 
-      {/* Profile and Navigation */}
+      {/* Navigation & Footer */}
       <Right />
     </>
   );
 };
 
-export default UploadLayout;
+export default ProfileLayout;
