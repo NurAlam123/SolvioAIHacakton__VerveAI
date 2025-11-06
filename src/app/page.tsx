@@ -1,8 +1,10 @@
 import JobPostCard from "@/components/JobPostCard";
+import NavigationCard from "@/components/NavigationCard";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
   return (
-    <div className="max-w-4xl mx-auto h-screen grid grid-cols-[1fr_30%] gap-2 py-6 px-2 relative">
+    <main className="max-w-4xl mx-auto h-screen grid grid-cols-[1fr_30%] gap-2 py-6 px-2 relative">
       <div className="text-5xl absolute top-1/2 -translate-y-1/2 left-0 -translate-x-[calc(50%+8px)] -rotate-90 -z-10">
         <p className="font-bold text-gray-200/70 tracking-widest">VERVE AI</p>
       </div>
@@ -20,7 +22,21 @@ export default function Home() {
       </div>
 
       {/* Profile and Navigation */}
-      <div className="border border-gray-300 h-full rounded-2xl"></div>
-    </div>
+      <div className="h-full rounded-2xl">
+        <div>
+          <p className="uppercase text-sm font-semibold text-gray-500 mb-4 select-none">
+            PROFILE
+          </p>
+          <ProfileCard />
+        </div>
+
+        <div className="mt-8">
+          <p className="uppercase text-sm font-semibold text-gray-500 mb-4 select-none">
+            NAVIGATION
+          </p>
+          <NavigationCard />
+        </div>
+      </div>
+    </main>
   );
 }

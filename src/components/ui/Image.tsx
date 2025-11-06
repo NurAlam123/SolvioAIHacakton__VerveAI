@@ -6,7 +6,7 @@ const Image = ({ className, src, alt, ...props }: ImageProps) => {
     <NextImage
       src={src}
       alt={alt}
-      className={cn(className, "select-none pointer-events-none")}
+      className={cn(className, "select-none pointer-events-none object-cover")}
       draggable="false"
       {...props}
     />

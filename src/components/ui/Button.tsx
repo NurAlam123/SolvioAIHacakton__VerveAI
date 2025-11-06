@@ -13,9 +13,7 @@ const Button = ({
         className,
       )}
       {...props}
-    >
-      Apply
-    </button>
+    ></button>
   );
 };
 
