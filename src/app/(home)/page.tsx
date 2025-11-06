@@ -1,4 +1,5 @@
 import JobPostCard from "@/components/JobPostCard";
+import Footer from "@/components/shared/Footer";
 import NavigationCard from "@/components/shared/NavigationCard";
 import ProfileCard from "@/components/shared/ProfileCard";
 
@@ -47,6 +48,8 @@ export default function Home() {
           </p>
           <NavigationCard />
         </div>
+
+        <Footer />
       </div>
     </main>
   );
