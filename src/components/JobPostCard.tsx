@@ -14,7 +14,7 @@ const JobPostCard = () => {
             height={24}
             className="object-cover"
           />
-          <p className="text-base font-semibold">Tristero</p>
+          <p className="text-base font-medium">Tristero</p>
         </div>
 
         <p className="text-sm text-gray-700 min-w-fit mt-1.5 select-none">
@@ -22,18 +22,17 @@ const JobPostCard = () => {
         </p>
       </div>
 
-      <div className="">
+      <div className="mb-3">
         <p className="text-xl font-bold text-gray-800">
           Junior Software Engineer
         </p>
+        <p className="text-sm/5 text-gray-700 mt-1">
+          We're on the lookout for clever, early stage software engineers. At
+          Tristero we build high performance distributed systems, and our
+          engineers play a pivotal role in the company's success. We do a lot of
+          systems...
+        </p>
       </div>
-
-      <p className="text-sm/5 text-gray-700 mb-1.5">
-        We're on the lookout for clever, early stage software engineers. At
-        Tristero we build high performance distributed systems, and our
-        engineers play a pivotal role in the company's success. We do a lot of
-        systems...
-      </p>
 
       <div className="flex gap-1 mb-4">
         <Chip>Remote</Chip>
