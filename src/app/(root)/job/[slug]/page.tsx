@@ -2,6 +2,7 @@ import MarkdownContent from "@/components/MarkdownContent";
 import CompanyName from "@/components/shared/CompanyName";
 import ContentArea from "@/components/shared/ContentArea";
 import Time from "@/components/Time";
+import Label from "@/components/ui/Label";
 import { jobPosts } from "@/constant/posts";
 
 interface Params {
@@ -22,26 +23,24 @@ const JobPost = async ({ params }: Props) => {
         <CompanyName
           name={job.company?.name}
           logo="/replit.svg"
-          className="py-4 md:py-6"
+          className="py-2 md:py-6"
         />
 
-        <p className="text-sm w-fit px-4">
+        <p className="text-sm w-fit px-4 text-gray-500">
           <Time time={job.createdAt} />
         </p>
       </div>
 
-      <section className="mt-4">
-        <h1 className="text-xl md:text-3xl">{job.title}</h1>
+      <section className="md:mt-4">
+        <h1 className="text-xl md:text-3xl font-bold">{job.title}</h1>
 
         <div className="mt-4">
-          <p className="text-lg text-gray-700 font-medium mb-1">
-            ABOUT THE ROLE
-          </p>
+          <Label className="text-xs md:text-lg">ABOUT THE ROLE</Label>
           <article>{job.description}</article>
         </div>
 
         <div className="mt-4">
-          <p className="text-lg text-gray-700 font-medium mb-1">READ MORE</p>
+          <Label className="text-xs md:text-lg">MORE DETAILS</Label>
           <article className="prose">
             <MarkdownContent content={job.content} />
           </article>

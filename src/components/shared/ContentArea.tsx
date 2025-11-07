@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Label from "../ui/Label";
 import { NavigationCard } from "./NavigationCard";
 
 const ContentArea = ({
@@ -15,9 +16,7 @@ const ContentArea = ({
   return (
     <div className="h-full overflow-hidden px-2">
       <div className="max-md:flex max-md:justify-between max-md:items-center mb-4">
-        <p className="uppercase text-sm font-semibold text-gray-500 select-none">
-          {title}
-        </p>
+        <Label className="text-gray-800">{title}</Label>
 
         {/* Navigation for small screens */}
         <div className="md:hidden">

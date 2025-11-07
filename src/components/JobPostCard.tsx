@@ -28,7 +28,12 @@ const JobPostCard = ({
       </div>
 
       <div className="mb-2 md:mb-3">
-        <p className="text-lg/5 md:text-xl font-bold text-gray-800">{title}</p>
+        <Link
+          href={`/job/${id}`}
+          className="text-lg/5 md:text-xl font-bold text-gray-800 block"
+        >
+          {title}
+        </Link>
         <p className="text-xs/3.75 md:text-sm/5 text-gray-700 mt-2 md:mt-1">
           {description}
         </p>
@@ -45,7 +50,7 @@ const JobPostCard = ({
 
       <div className="flex items-center justify-between flex-wrap gap-4">
         <p className="text-sm md:text-base font-medium">{salary}</p>
-        <Link href={`/job/${id}`} className="block">
+        <Link href={`/upload`} className="block">
           <Button className="cursor-pointer">Apply</Button>
         </Link>
       </div>
