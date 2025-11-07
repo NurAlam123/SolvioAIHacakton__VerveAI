@@ -1,6 +1,7 @@
 "use client";
 
 import { FileTextIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import DragAndDropCV from "@/components/DnDFile/DragAndDropCV";
@@ -8,7 +9,6 @@ import DragAndDropVideoFile from "@/components/DnDFile/DragAndDropVideoFile";
 import ContentArea from "@/components/shared/ContentArea";
 import Button from "@/components/ui/Button";
 import { API_URL } from "@/constant";
-import { useRouter } from "next/navigation";
 
 export default function Upload() {
   const [cvFile, setCvFile] = useState<File | null>(null);

@@ -1,55 +1,46 @@
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 
-import Time from "./Time";
-import Image from "./ui/Image";
+import { API_URL } from "@/constant";
 import CompanyName from "./shared/CompanyName";
+import Time from "./Time";
 
-const jobs = [
-  {
-    id: "1b5724a4-9346-43df-a2fa-9f85f077bb96",
-    title: "Senior Machine Learning Engineer (Generative AI)",
-    firstName: "Taher",
-    lastName: "Ahmed",
-    email: "taher@mail.com",
-    phone: "01843493527",
-    status: "COMPLETED",
-    overallScore: 70.7880474895369,
-    createdAt: "2025-11-06T16:09:59.989Z",
-    completedAt: "2025-11-06T16:11:24.756Z",
-    company: {
-      name: "Synapse AI Labs",
-      icon: "https://placehold.co/40x40/791bc0/ffffff?text=SL",
-      companyID: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-    },
-  },
-  {
-    id: "1b5f41ab-6b41-4a26-ad3d-d0750f2bb97f",
-    title: "Junior Data Scientist (Predictive Analytics)",
-    firstName: "Taher",
-    lastName: "Ahmed",
-    email: "taher@mail.com",
-    phone: "01843493527",
-    status: "COMPLETED",
-    overallScore: 70.7880474895369,
-    createdAt: "2025-11-06T13:01:10.038Z",
-    completedAt: "2025-11-06T13:02:34.053Z",
-    company: {
-      name: "Quantum Dynamics",
-      icon: "https://placehold.co/40x40/00c2a2/1a1f2c?text=QD",
-      companyID: "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
-    },
-  },
-];
+interface JobType {
+  id: string;
+  title: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  status: string;
+  overallScore: number;
+  createdAt: string;
+  completedAt: string;
+  company: {
+    name: string;
+    icon: string;
+    companyID: string;
+  };
+}
 
-const UserJobApplications = () => {
+const UserJobApplications = async () => {
+  const res = await fetch(`${API_URL}/api/job-applications`);
+  if (!res.ok) return <p>Something wrong while fetching data...</p>;
+
+  const { data: resData, success } = await res.json();
+  if (!success) return <p>Something wrong... Try again later</p>;
+  const jobs: JobType[] = resData.applications;
+
   return (
     <div className="space-y-2 mt-4">
-      {jobs.map(({ id, title, createdAt, company, overallScore }) => (
+      {jobs.map(({ id, title, createdAt, overallScore }) => (
         <div key={id} className="space-y-2 bg-gray-50 p-4 rounded-2xl relative">
-          <CompanyName name={company?.name} logo="/replit.svg" />
+          <CompanyName name={"Replit"} logo="/replit.svg" />
           <div>
-            <p className="text-base md:text-lg font-medium">{title}</p>
+            <p className="text-base md:text-lg font-medium">
+              {title || "Senior Machine Learning Engineer (Generative AI)"}
+            </p>
+
             <p className="text-sm text-gray-600 max-md:mt-1">
               <Time time={createdAt} />
             </p>
