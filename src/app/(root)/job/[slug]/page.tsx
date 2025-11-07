@@ -1,6 +1,7 @@
 import MarkdownContent from "@/components/MarkdownContent";
+import CompanyName from "@/components/shared/CompanyName";
 import ContentArea from "@/components/shared/ContentArea";
-import Image from "@/components/ui/Image";
+import Time from "@/components/Time";
 import { jobPosts } from "@/constant/posts";
 
 interface Params {
@@ -17,17 +18,18 @@ const JobPost = async ({ params }: Props) => {
 
   return (
     <ContentArea title="JOB POST">
-      <div className="flex gap-4 py-6">
-        <Image
-          src="/replit.svg"
-          alt="company logo"
-          width={64}
-          height={64}
-          className="size-6"
+      <div className="flex justify-between items-center">
+        <CompanyName
+          name={job.company?.name}
+          logo="/replit.svg"
+          className="py-6"
         />
 
-        <p className="text-sm md:text-base font-medium">{job.company?.name}</p>
+        <p className="text-sm w-fit px-4">
+          <Time time={job.createdAt} />
+        </p>
       </div>
+
       <section className="mt-4">
         <h1 className="text-3xl">{job.title}</h1>
 

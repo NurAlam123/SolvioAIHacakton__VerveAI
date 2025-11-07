@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Time from "./Time";
 import Image from "./ui/Image";
+import CompanyName from "./shared/CompanyName";
 
 const jobs = [
   {
@@ -45,18 +46,8 @@ const UserJobApplications = () => {
   return (
     <div className="space-y-2 mt-4">
       {jobs.map(({ id, title, createdAt, company, overallScore }) => (
-        <div key={id} className="space-y-1 bg-gray-50 p-4 rounded-2xl relative">
-          <div className="flex gap-1">
-            <Image
-              src="/replit.svg"
-              alt="company"
-              width={64}
-              height={64}
-              className="size-4 md:size-6"
-            />
-
-            <p className="text-sm md:text-base font-medium">{company?.name}</p>
-          </div>
+        <div key={id} className="space-y-2 bg-gray-50 p-4 rounded-2xl relative">
+          <CompanyName name={company?.name} logo="/replit.svg" />
           <div>
             <p className="text-base md:text-lg font-medium">{title}</p>
             <p className="text-sm text-gray-600 max-md:mt-1">

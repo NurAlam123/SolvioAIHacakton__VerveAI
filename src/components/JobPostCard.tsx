@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { JobPosts } from "@/constant/posts";
+import CompanyName from "./shared/CompanyName";
 import Time from "./Time";
 import Button from "./ui/Button";
 import Chip from "./ui/Chip";
-import Image from "./ui/Image";
 
 const JobPostCard = ({
   id,
@@ -20,16 +20,7 @@ const JobPostCard = ({
   return (
     <div className="w-full max-h-96 min-h-52 bg-gray-50 hover:bg-gray-100 p-4 rounded-2xl shadow-2xs">
       <div className="flex justify-between items-start gap-1 mb-2">
-        <div className="flex items-center gap-4">
-          <Image
-            src="/replit.svg"
-            alt="company logo"
-            width={24}
-            height={24}
-            className="object-cover size-4 md:size-6"
-          />
-          <p className="text-sm md:text-base font-medium">{company?.name}</p>
-        </div>
+        <CompanyName name={company?.name} logo="/replit.svg" />
 
         <p className="text-xs md:text-sm text-gray-700 min-w-fit md:mt-1.5 select-none">
           <Time time={createdAt} />
