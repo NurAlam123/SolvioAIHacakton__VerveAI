@@ -3,34 +3,41 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
-export default function DragAndDropFile() {
+interface Props {
+  onFileSelect: (value: File) => void;
+}
+
+export default function DragAndDropVideoFile({ onFileSelect }: Props) {
   const [uploaded, setUploaded] = useState(false);
   // const [file, setFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   // const [uploadProgress, setUploadProgress] = useState(0);
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    if (!acceptedFiles?.length) return;
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      if (!acceptedFiles?.length) return;
 
-    const selectedFile = acceptedFiles[0];
-    // setFile(selectedFile);
-    setUploaded(true);
+      const selectedFile = acceptedFiles[0];
+      onFileSelect(selectedFile);
+      setUploaded(true);
 
-    const url = URL.createObjectURL(selectedFile);
-    setPreviewUrl(url);
+      const url = URL.createObjectURL(selectedFile);
+      setPreviewUrl(url);
 
-    // // Simulate upload progress (replace this with actual upload logic)
-    // setUploadProgress(0);
-    // const interval = setInterval(() => {
-    //   setUploadProgress((prev) => {
-    //     if (prev >= 100) {
-    //       clearInterval(interval);
-    //       return 100;
-    //     }
-    //     return prev + 10;
-    //   });
-    // }, 200);
-  }, []);
+      // // Simulate upload progress (replace this with actual upload logic)
+      // setUploadProgress(0);
+      // const interval = setInterval(() => {
+      //   setUploadProgress((prev) => {
+      //     if (prev >= 100) {
+      //       clearInterval(interval);
+      //       return 100;
+      //     }
+      //     return prev + 10;
+      //   });
+      // }, 200);
+    },
+    [onFileSelect],
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -73,7 +80,7 @@ export default function DragAndDropFile() {
             isDragActive ? "border-blue-400 bg-blue-50" : ""
           }`}
         >
-          <input {...getInputProps()} />
+          <input name="video" {...getInputProps()} />
           <p className="text-gray-600 select-none">
             {isDragActive
               ? "Drop the video here..."
