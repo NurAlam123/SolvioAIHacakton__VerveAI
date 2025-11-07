@@ -8,11 +8,9 @@ export default function Home() {
     <>
       <SideLabel />
       <ContentArea title="JOB BOARD">
-        <div className="h-full overflow-y-auto space-y-2 no-scrollbar pb-24 md:pb-16">
-          {jobPosts.map((data) => (
-            <JobPostCard key={data.id} {...data} />
-          ))}
-        </div>
+        {jobPosts.map((data) => (
+          <JobPostCard key={data.id} {...data} />
+        ))}
       </ContentArea>
     </>
   );

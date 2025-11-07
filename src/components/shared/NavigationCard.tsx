@@ -65,7 +65,7 @@ const HomeButton = () => {
   );
 };
 
-export const NavigationCard = ({ pathname }: { pathname: string }) => {
+export const NavigationCard = ({ pathname }: { pathname?: string }) => {
   return (
     <div className="flex max-md:gap-2 max-md:items-center md:w-full md:border md:border-gray-200 md:rounded-2xl md:overflow-hidden md:p-2 md:flex-col bg-white">
       {pathname !== "/" && <HomeButton />}
