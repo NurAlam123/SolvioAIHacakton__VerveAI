@@ -97,9 +97,9 @@ const ApplicationPage = async ({ params }: Props) => {
         <CompanyName
           name={job.company.name}
           logo="/replit.svg"
-          className="py-4"
+          className="py-2 md:py-4"
         />
-        <h1 className="text-3xl">{job.title}</h1>
+        <h1 className="text-xl md:text-3xl">{job.title}</h1>
       </div>
 
       <div>

@@ -22,7 +22,7 @@ const JobPost = async ({ params }: Props) => {
         <CompanyName
           name={job.company?.name}
           logo="/replit.svg"
-          className="py-6"
+          className="py-4 md:py-6"
         />
 
         <p className="text-sm w-fit px-4">
@@ -31,7 +31,7 @@ const JobPost = async ({ params }: Props) => {
       </div>
 
       <section className="mt-4">
-        <h1 className="text-3xl">{job.title}</h1>
+        <h1 className="text-xl md:text-3xl">{job.title}</h1>
 
         <div className="mt-4">
           <p className="text-lg text-gray-700 font-medium mb-1">
