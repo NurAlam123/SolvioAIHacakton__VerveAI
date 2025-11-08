@@ -1,6 +1,7 @@
 import ContentArea from "@/components/shared/ContentArea";
 import UserJobApplications from "@/components/UserJobApplications";
 import Image from "@/components/ui/Image";
+import Label from "@/components/ui/Label";
 
 const ProfilePage = () => {
   return (
@@ -38,9 +39,7 @@ const ProfilePage = () => {
       </div>
 
       <div className="mt-8 space-y-2">
-        <p className="uppercase text-sm font-semibold text-gray-500 select-none">
-          APPLICATIONS
-        </p>
+        <Label>Applicaiotns</Label>
 
         <UserJobApplications />
       </div>

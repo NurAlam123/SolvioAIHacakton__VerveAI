@@ -1,27 +1,9 @@
 import { ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
-
 import { API_URL } from "@/constant";
+import type { JobType } from "@/types";
 import CompanyName from "./shared/CompanyName";
 import Time from "./Time";
-
-interface JobType {
-  id: string;
-  title: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  status: string;
-  overallScore: number;
-  createdAt: string;
-  completedAt: string;
-  company: {
-    name: string;
-    icon: string;
-    companyID: string;
-  };
-}
 
 const UserJobApplications = async () => {
   const res = await fetch(`${API_URL}/api/job-applications`);
@@ -30,10 +12,13 @@ const UserJobApplications = async () => {
   const { data: resData, success } = await res.json();
   if (!success) return <p>Something wrong... Try again later</p>;
   const jobs: JobType[] = resData.applications;
+  const userJobs = jobs.filter(
+    ({ firstName, lastName }) => firstName === "Kodom" && lastName === "Ali",
+  );
 
   return (
     <div className="space-y-2 mt-4">
-      {jobs.map(({ id, title, createdAt, overallScore }) => (
+      {userJobs.map(({ id, title, createdAt, overallScore }) => (
         <div key={id} className="space-y-2 bg-gray-50 p-4 rounded-2xl relative">
           <CompanyName name={"Replit"} logo="/replit.svg" />
           <div>

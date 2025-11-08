@@ -16,7 +16,9 @@ interface Props {
 
 const ApplicationPage = async ({ params }: Props) => {
   const { slug: applicationID } = await params;
-  const res = await fetch(`${API_URL}/api/job-application/${applicationID}`);
+  const res = await fetch(`${API_URL}/api/job-application/${applicationID}`, {
+    next: { revalidate: 30 },
+  });
 
   const applicationRes = await res.json();
 
