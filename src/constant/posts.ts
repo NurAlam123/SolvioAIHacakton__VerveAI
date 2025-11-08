@@ -27,7 +27,7 @@ export const jobPosts: JobPosts[] = [
     description:
       "Lead the development and deployment of next-generation Generative AI models focusing on large language models (LLMs) and diffusion models. Requires deep expertise in PyTorch and scalable deployment.",
     company: {
-      name: "Synapse AI Labs",
+      name: "Replit",
       icon: "https://placehold.co/40x40/791bc0/ffffff?text=SL",
       companyID: "a1b2c3d4-e5f6-7890-1234-567890abcdef",
     },
@@ -48,7 +48,7 @@ export const jobPosts: JobPosts[] = [
     description:
       "A foundational role focused on cleaning, transforming, and modeling large datasets to uncover actionable insights for our clients in finance and health. Great opportunity for recent graduates.",
     company: {
-      name: "Quantum Dynamics",
+      name: "Replit",
       icon: "https://placehold.co/40x40/00c2a2/1a1f2c?text=QD",
       companyID: "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
     },
@@ -69,7 +69,7 @@ export const jobPosts: JobPosts[] = [
     description:
       "Shape the ethical guidelines and governance frameworks for our AI products. Focus on fairness, transparency, and accountability across all deployed systems. Essential for regulatory compliance.",
     company: {
-      name: "Veritas Solutions",
+      name: "Replit",
       icon: "https://placehold.co/40x40/5a647d/ffffff?text=VS",
       companyID: "c3d4e5f6-a7b8-9012-3456-7890abcdef12",
     },
@@ -96,7 +96,7 @@ export const jobPosts: JobPosts[] = [
     description:
       "Pioneer the art and science of interacting with large language models. Develop, test, and optimize prompt structures for complex business workflows, maximizing model output quality and consistency.",
     company: {
-      name: "AuraTech Innovations",
+      name: "Replit",
       icon: "https://placehold.co/40x40/791bc0/f3f4f6?text=AT",
       companyID: "d4e5f6a7-b8c9-0123-4567-890abcdef123",
     },
@@ -123,7 +123,7 @@ export const jobPosts: JobPosts[] = [
     description:
       "Develop and maintain real-time computer vision algorithms for autonomous industrial robots. This role involves C++ and Python development directly on embedded systems and requires hands-on hardware interaction.",
     company: {
-      name: "Global Robotics Inc.",
+      name: "Replit",
       icon: "https://placehold.co/40x40/00c2a2/111827?text=GR",
       companyID: "e5f6a7b8-c9d0-1234-5678-90abcdef1234",
     },
@@ -144,8 +144,8 @@ export const jobPosts: JobPosts[] = [
     description:
       "Establish and manage the cloud infrastructure (AWS/GCP) necessary for continuous integration and deployment of hundreds of machine learning models. Focus on automation, monitoring, and scaling.",
     company: {
-      name: "DataStream Corp.",
-      icon: "https://placehold.co/40x40/5a647d/791bc0?text=DC",
+      name: "Replit",
+      icon: "Replit",
       companyID: "f6a7b8c9-d0e1-2345-6789-0abcdef12345",
     },
     salary: "$145,000 - $185,000",

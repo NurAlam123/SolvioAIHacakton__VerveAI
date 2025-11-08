@@ -35,15 +35,15 @@ const ApplicationPage = async ({ params }: Props) => {
   return (
     <ContentArea title="APPLICATION DETAILS">
       {/* will remove this */}
-      <p className="text-sm select-none">
-        <strong>applicationID:</strong> {applicationID}
-      </p>
+      {/* <p className="text-sm select-none"> */}
+      {/*   <strong>applicationID:</strong> {applicationID} */}
+      {/* </p> */}
 
       <div>
         <div>
           {/* TODO: add when the job posted, when user applied and when the application is completed */}
-          <p className="text-sm hover:before:content-['Created_']">
-            <Time time={application.createdAt} />
+          <p className="text-sm">
+            Created <Time time={application.createdAt} />
           </p>
         </div>
 
@@ -76,7 +76,7 @@ const ApplicationPage = async ({ params }: Props) => {
                     <CardData
                       key={`emotion-${i + 1}`}
                       title={emotion}
-                      value={score * 100}
+                      value={score * 10}
                       suffix=" %"
                     />
                   ),
